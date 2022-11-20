@@ -1,0 +1,138 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+header.main-header {
+  background-image: linear-gradient(to top, #eef6fa, rgba(0, 0, 0, 0));
+  padding: 130px 0 0;
+
+  @include lg {
+    padding: 130px 0 80px;
+  }
+
+  @include md {
+    padding: 130px 0;
+  }
+
+  @include sm {
+    text-align: center;
+    padding: 75px 0 0;
+  }
+
+  .info {
+    margin-top: 70px;
+
+    @include lg {
+      margin-top: 60px;
+    }
+
+    @include md {
+      margin-top: 50px;
+    }
+
+    @include sm {
+      margin-top: 0px;
+      margin-bottom: 80px;
+    }
+
+    h3 {
+      font-size: 30px;
+      font-weight: bold;
+
+      @include lg {
+        font-size: 26px;
+      }
+
+      @include md {
+        font-size: 24px;
+      }
+
+      &::after {
+        content: "";
+        width: 135px;
+        height: 5px;
+        background-color: var(--secondaryColor);
+        display: block;
+        border-radius: 8px;
+        margin: 20px 0;
+
+        @include sm {
+          margin: 10px auto 20px;
+          width: 120px;
+          height: 3px;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: bold;
+      color: var(--mainColor);
+      margin-bottom: 25px;
+
+      @include lg {
+        font-size: 36px;
+      }
+
+      @include md {
+        font-size: 32px;
+      }
+    }
+
+    p {
+      line-height: 36px;
+      color: var(--paragraphsDark);
+      margin-bottom: 32px;
+      width: 85%;
+
+      @include lg {
+        line-height: 30px;
+      }
+
+      @include md {
+        width: 100%;
+        font-size: 15px;
+      }
+    }
+
+    .actions {
+      button:first-child {
+        @extend %main-button;
+        width: 170px;
+        height: 45px;
+        margin-inline-end: 15px;
+
+        @include md {
+          width: 140px;
+          height: 40px;
+          font-size: 15px;
+          margin-inline-end: 8px;
+        }
+      }
+
+      button:last-child {
+        @extend %secondary-button;
+        background-color: transparent;
+        width: 170px;
+        height: 45px;
+
+        @include md {
+          width: 140px;
+          height: 40px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .image {
+    img {
+      @include lg {
+        padding-inline-start: 50px;
+      }
+
+      @include md {
+        padding-inline-start: 0;
+      }
+    }
+  }
+}

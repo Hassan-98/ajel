@@ -1,0 +1,174 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+.Steps {
+  padding: 70px 0;
+
+  @include lg {
+    padding: 70px 0;
+  }
+
+  .info {
+    h3 {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+
+      @include lg {
+        font-size: 26px;
+      }
+
+      @include md {
+        font-size: 23px;
+      }
+
+      &::after {
+        content: "";
+        width: 135px;
+        height: 5px;
+        background-color: var(--secondaryColor);
+        display: block;
+        border-radius: 8px;
+        margin: 10px auto 15px;
+
+        @include sm {
+          width: 100px;
+          height: 3px;
+        }
+      }
+    }
+
+    p {
+      color: var(--paragraphsDark);
+      width: 50%;
+      text-align: center;
+      margin: auto;
+      margin-bottom: 32px;
+
+      @include md {
+        width: 100%;
+        font-size: 15px;
+      }
+    }
+
+    .steps {
+      margin-top: 40px;
+      background-image: linear-gradient(to top, #eef6fa59, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+      border-radius: 100px;
+      padding: 50px;
+
+      @include lg {
+        margin-top: 30px;
+      }
+
+      @include md {
+        padding: 20px;
+      }
+
+      .step {
+        text-align: center;
+
+        .image {
+          width: 90px;
+          height: 90px;
+          border: 1px solid #ccc;
+          border-radius: 50%;
+          margin: 10px auto 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+
+          &::after {
+            content: "";
+            width: 170px;
+            height: 0;
+            border-top: 1px dashed #ccc;
+            display: block;
+            position: absolute;
+            right: calc(100% + 25px);
+            top: 50px;
+
+            @include xl {
+              width: 130px;
+            }
+
+            @media (min-width: 1400px) and (max-width: 1480px) {
+              width: 170px;
+            }
+
+            @include lg {
+              width: 80px;
+            }
+
+            @include md {
+              display: none;
+            }
+          }
+
+          img {
+            width: auto;
+            height: 40px;
+            margin: 0 auto;
+          }
+        }
+
+        &.last {
+          .image::after {
+            display: none;
+          }
+        }
+
+        h5 {
+          font-weight: bold;
+        }
+
+        p {
+          color: var(--paragraphsGery);
+          margin-top: 15px;
+          width: 70%;
+          margin-bottom: 10px;
+          font-size: 14px;
+
+          @include lg {
+            font-size: 13px;
+          }
+
+          @include md {
+            width: 90%;
+          }
+        }
+      }
+
+      &.en {
+        .step {
+          &.first {
+            .image::after {
+              display: none;
+            }
+          }
+
+          &.last {
+            .image::after {
+              display: block;
+
+              @include md {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .image {
+    img {
+      @include lg {
+        width: auto;
+        height: 50vh;
+        margin: 15px auto;
+      }
+    }
+  }
+}

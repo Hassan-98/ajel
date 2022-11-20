@@ -1,0 +1,120 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+.video {
+  padding: 70px 0;
+
+  @include lg {
+    padding: 70px 0;
+  }
+
+  .details {
+    h2 {
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    p {
+      margin-bottom: 25px;
+    }
+
+    button {
+      margin-top: 25px;
+      border-radius: 8px;
+      background-color: var(--mainColor);
+      color: #fff;
+      border: 0;
+      padding: 10px 40px;
+    }
+  }
+
+  .image {
+    position: relative;
+
+    img {
+      border-radius: 10px;
+    }
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background-color: #fff;
+      color: var(--mainColor);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      animation: fadeOutShadow 1.15s linear infinite;
+
+      i {
+        font-size: 24px;
+      }
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: rgba(#054aeb, 0.9);
+      position: absolute;
+      left: -15px;
+      top: -15px;
+      z-index: -1;
+      border-radius: 10px;
+
+      @include sm {
+        width: calc(100% + 10px);
+        height: calc(100% + 10px);
+        left: -5px;
+        top: -5px;
+      }
+    }
+
+    &.en {
+      &::after {
+        left: unset;
+        right: -15px;
+        top: -15px;
+      }
+    }
+  }
+
+  .iframe {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.90);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    iframe {
+      width: 65%;
+      height: 65%;
+      border-radius: 10px;
+    }
+  }
+
+}
+
+@keyframes fadeOutShadow {
+  0% {
+    box-shadow: 0 0 0 0 #054aeb;
+  }
+
+  50% {
+    box-shadow: 0 0 0 30px #054aeb00;
+  }
+
+  100% {
+    box-shadow: 0 0 0 30px #054aeb00;
+  }
+}

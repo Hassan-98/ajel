@@ -1,0 +1,67 @@
+@import "../../../styles/mixins";
+
+header.inner-header {
+  padding: 50px;
+  padding-bottom: 0;
+
+  @include md {
+    padding: 20px 0;
+  }
+
+  .content {
+    border-radius: 8px;
+    padding: 60px;
+    background-image: linear-gradient(to left, #FBFBFC, rgba(0, 0, 0, 0));
+
+    @include md {
+      padding: 20px;
+    }
+
+    &.en {
+      background-image: linear-gradient(to right, #FBFBFC, rgba(0, 0, 0, 0));
+    }
+
+    .icon {
+      border-radius: 8px;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 60px rgba($color: #000, $alpha: 0.1);
+      margin-inline-end: 32px;
+
+      @include md {
+        padding: 10px;
+      }
+
+      img {
+        width: 75px;
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+      }
+    }
+
+    .details {
+      width: 100%;
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      p {
+        width: 55%;
+
+        @include lg {
+          width: 75%;
+        }
+
+        @include md {
+          width: 100%;
+        }
+
+        @include sm {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

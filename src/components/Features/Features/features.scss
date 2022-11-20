@@ -1,0 +1,96 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+.features {
+  padding: 100px 0 80px;
+
+  @include lg {
+    padding: 80px 0 60px;
+  }
+
+
+  h3 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+
+    @include lg {
+      font-size: 30px;
+    }
+
+    @include md {
+      font-size: 26px;
+    }
+
+    &::after {
+      content: "";
+      width: 135px;
+      height: 5px;
+      background-color: var(--secondaryColor);
+      display: block;
+      border-radius: 8px;
+      margin: 10px auto 15px;
+
+      @include sm {
+        width: 100px;
+        height: 3px;
+      }
+    }
+  }
+
+  p.description {
+    color: var(--paragraphsDark);
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 70px;
+
+    @include md {
+      width: 100%;
+      font-size: 15px;
+      margin-bottom: 50px;
+    }
+  }
+
+
+  .feature {
+    display: flex;
+    text-align: end;
+    gap: 20px;
+
+    .icon {
+      width: 75px;
+      height: 75px;
+      padding: 10px;
+      border-radius: 25% 50% 50% 25%;
+      background-image: linear-gradient(to right, var(--mainColor), var(--darkColor));
+      border: 1px solid var(--mainColor);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        object-fit: contain;
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    .details {
+      flex-grow: 1;
+
+      h4 {
+        font-weight: bold;
+      }
+    }
+
+    &.right {
+      text-align: start;
+
+      .icon {
+        border-radius: 50% 25% 25% 50%;
+      }
+    }
+  }
+
+}

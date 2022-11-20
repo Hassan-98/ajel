@@ -1,0 +1,127 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+.form {
+  padding-bottom: 80px;
+
+  .form-box {
+    padding: 50px;
+    background-color: #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+
+    @include md {
+      padding: 30px;
+    }
+
+    h2 {
+      font-weight: bold;
+
+      @include lg {
+        font-size: 30px;
+      }
+    }
+
+    p {
+      margin-bottom: 25px;
+    }
+
+    input {
+      padding: 10px 15px;
+    }
+
+    textarea {
+      resize: none;
+      height: 150px;
+    }
+
+    button {
+      padding: 8px 50px;
+    }
+  }
+
+  .icons-box {
+    padding: 50px;
+    background-color: var(--mainColor);
+    color: #fff;
+    position: relative;
+    top: 30px;
+    height: calc(100% - 60px);
+    border-radius: 10px 0 0 10px;
+
+    &.en {
+      border-radius: 0 10px 10px 0;
+    }
+
+    @include lg {
+      padding: 50px 20px;
+    }
+
+    @include md {
+      padding: 30px;
+    }
+
+    @include sm {
+      top: 0;
+      transform: translateY(0);
+      padding: 30px;
+      margin-top: 25px;
+      border-radius: 10px !important;
+      height: 100%;
+    }
+
+    h2 {
+      margin-bottom: 40px;
+
+      @include lg {
+        font-size: 30px;
+      }
+    }
+
+    i {
+      border: 1px solid #fff;
+      background-color: #fff;
+      color: var(--mainColor);
+      width: calc(25% - 15px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 36px;
+      padding: 5px 0;
+      margin-bottom: 20px;
+      margin-inline-end: 15px;
+      border-radius: 25px 5px 25px 15px;
+      cursor: pointer;
+      transition: all 0.4s;
+
+      &:hover {
+        color: #fff;
+        background-color: var(--mainColor);
+      }
+
+      @include lg {
+        width: calc(33.33% - 15px);
+        font-size: 28px;
+      }
+
+      @include md {
+        width: calc(50% - 15px);
+        font-size: 28px;
+      }
+
+      @include sm {
+        width: calc(25% - 15px);
+        font-size: 28px;
+      }
+
+      @include xs {
+        margin-inline-end: 10px;
+        width: calc(25% - 10px);
+        font-size: 28px;
+        padding: 5px 0;
+      }
+    }
+  }
+
+}

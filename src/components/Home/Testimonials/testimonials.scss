@@ -1,0 +1,102 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+.Testimonials {
+  padding: 100px 0;
+
+  @include lg {
+    padding: 70px 0;
+  }
+
+
+  h3 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+
+    @include lg {
+      font-size: 30px;
+    }
+
+    @include md {
+      font-size: 26px;
+    }
+
+    &::after {
+      content: "";
+      width: 135px;
+      height: 5px;
+      background-color: var(--secondaryColor);
+      display: block;
+      border-radius: 8px;
+      margin: 10px auto 15px;
+
+      @include sm {
+        width: 100px;
+        height: 3px;
+      }
+    }
+  }
+
+  .info {
+    background-image: url('/assets/images/clientsBg.png');
+    background-size: contain;
+    background-position: center center;
+
+    &>p {
+      color: var(--paragraphsDark);
+      width: 50%;
+      text-align: center;
+      margin: auto;
+      margin-bottom: 60px;
+
+      @include md {
+        width: 100%;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .swiper {
+    overflow: visible;
+    padding-bottom: 50px;
+
+    .item {
+      margin: 0 15px;
+      padding: 25px;
+      box-shadow: 0 0 60px rgba($color: #000, $alpha: 0.1);
+      border-radius: 10px;
+      background: #fff;
+
+      .text {
+        font-weight: 200;
+        margin-bottom: 40px;
+      }
+
+      .agent {
+        img {
+          width: 60px;
+          height: 60px;
+          margin-inline-end: 10px;
+        }
+
+        .user {
+          h4 {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+          }
+
+          p {
+            font-size: 14px;
+            margin: 0;
+          }
+        }
+      }
+
+      .quotes {
+        width: 60px;
+      }
+    }
+  }
+}

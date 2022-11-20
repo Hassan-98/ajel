@@ -1,0 +1,42 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+.info-section {
+  padding: 100px 0 70px;
+
+  @include lg {
+    padding: 70px 0;
+  }
+
+  .info-box {
+    padding: 35px 20px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+
+    @include md {
+      margin-bottom: 35px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 65%;
+      height: 4px;
+      background-color: var(--mainColor);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    i {
+      color: var(--mainColor);
+      font-size: 64px;
+      margin-bottom: 10px;
+    }
+  }
+
+}

@@ -1,0 +1,493 @@
+@import "mixins";
+@import "variables";
+@import url('/assets/css/bootstrap.min.css');
+
+/**************************\ Selection Reset \***********************/
+@font-face {
+  font-family: Fairuz;
+  src: url('/assets/fonts/Fairuz-Normal.otf');
+  font-weight: 300 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Fairuz;
+  src: url('/assets/fonts/Fairuz-Light.otf');
+  font-weight: 100 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Fairuz;
+  src: url('/assets/fonts/Fairuz-Bold.otf');
+  font-weight: 600 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: URWDINArabic;
+  src: url('/assets/fonts/URW-DIN-Arabic.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url('/assets/fonts/Rubik.ttf');
+  font-display: swap;
+}
+
+
+/***************  { General Styles For Elements }   *****************/
+$mainColor: #0840c2;
+$h1: 56px;
+$h2: 40px;
+$h3: 32px;
+$h4: 24px;
+$h5: 18px;
+$h6: 16px;
+$p: 16px;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/********************************************************************************/
+
+/********************* Adjusting Font Sizes For All Screens *********************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 5px 0;
+}
+
+h1 {
+  font-size: $h1;
+}
+
+h2 {
+  font-size: $h2;
+}
+
+h3 {
+  font-size: $h3;
+}
+
+h4 {
+  font-size: $h4;
+}
+
+h5 {
+  font-size: $h5;
+}
+
+h6 {
+  font-size: $h6;
+}
+
+p {
+  color: #7a7b7c;
+  font-weight: 500;
+  line-height: 25px;
+  font-size: $p;
+}
+
+/****** Large Screen ******/
+@include lg {
+  h1 {
+    font-size: $h1 - $h1 * 0.1;
+  }
+
+  h2 {
+    font-size: $h2 - $h2 * 0.1;
+  }
+
+  h3 {
+    font-size: $h3 - $h3 * 0.1;
+  }
+
+  h4 {
+    font-size: $h4 - $h4 * 0.1;
+  }
+
+  h5 {
+    font-size: $h5 - $h5 * 0.1;
+  }
+
+  h6 {
+    font-size: $h6 - $h6 * 0.05;
+  }
+}
+
+/****** Medium Screen ******/
+@include md {
+  h1 {
+    font-size: $h1 - $h1 * 0.25;
+  }
+
+  h2 {
+    font-size: $h2 - $h2 * 0.2;
+  }
+
+  h3 {
+    font-size: $h3 - $h3 * 0.2;
+  }
+
+  h4 {
+    font-size: $h4 - $h4 * 0.2;
+  }
+
+  h5 {
+    font-size: $h5 - $h5 * 0.2;
+  }
+
+  h6 {
+    font-size: $h6 - $h6 * 0.1;
+  }
+}
+
+/****** Small Screen ******/
+@include sm {
+  h1 {
+    font-size: $h1 - $h1 * 0.35;
+  }
+
+  h2 {
+    font-size: $h2 - $h2 * 0.3;
+  }
+
+  h3 {
+    font-size: $h3 - $h3 * 0.3;
+  }
+
+  h4 {
+    font-size: $h4 - $h4 * 0.25;
+  }
+
+  h5 {
+    font-size: $h5 - $h5 * 0.25;
+  }
+
+  h6 {
+    font-size: $h6 - $h6 * 0.15;
+  }
+}
+
+@include xs {
+  h1 {
+    font-size: $h1 - $h1 * 0.45;
+  }
+
+  h2 {
+    font-size: $h2 - $h2 * 0.4;
+  }
+
+  h3 {
+    font-size: $h3 - $h3 * 0.35;
+  }
+
+  h4 {
+    font-size: $h4 - $h4 * 0.3;
+  }
+
+  span,
+  p {
+    font-size: 15px;
+  }
+}
+
+/****** Mobile Screen ******/
+@include xxs {
+  h1 {
+    font-size: $h1 - $h1 * 0.6;
+  }
+
+  h2 {
+    font-size: $h2 - $h2 * 0.5;
+  }
+
+  h3 {
+    font-size: $h3 - $h3 * 0.45;
+  }
+
+  h4 {
+    font-size: $h4 - $h4 * 0.35;
+  }
+}
+
+/***********************************************************************************************/
+
+/*******************************\  Ready Shared Styles & Elements  \****************************/
+
+// Buttons
+%btn {
+  border: 1.5px solid #aaa;
+  background: transparent;
+  padding: 11px 35px;
+  color: #000;
+  outline: none !important;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    border-color: #262626;
+  }
+}
+
+// Inputs, Select, Textarea
+%form-element {
+  background: #fff;
+  border-radius: 5px;
+  border: 1.5px solid #aaa;
+  padding: 11px 15px;
+  outline: none;
+  font-size: 16px;
+  resize: none;
+  width: 50%;
+
+  &:focus {
+    border: 1.5px double #002147;
+  }
+
+  @include sm {
+    margin: 15px;
+    padding: 8px 12px;
+    width: calc(100% - 25px);
+  }
+
+  @include xs {
+    margin: 15px 10px;
+    padding: 8px 12px;
+    width: calc(100% - 15px);
+  }
+}
+
+// Tables
+%table {
+  max-width: 100%;
+  box-shadow: 0 0 5px rgba($color: #000, $alpha: 0.1);
+  border-radius: 10px;
+  background: #f6f6f6;
+  border-spacing: 0;
+  overflow: hidden;
+
+  tr {
+    background: #fff;
+
+    &:first-of-type {
+      background: #f6f6f6;
+
+      th {
+        border-bottom: 1px solid #eee;
+        padding: 15px 25px;
+
+        &:first-of-type {
+          border-radius: 10px 0 0 0;
+        }
+
+        &:last-of-type {
+          border-radius: 0 10px 0 0;
+        }
+      }
+    }
+
+    &:last-of-type {
+      td {
+        &:first-of-type {
+          border-radius: 0 0 0 10px;
+        }
+
+        &:last-of-type {
+          border-radius: 0 0 10px 0;
+        }
+      }
+    }
+
+    td {
+      border-bottom: 1px solid #f1f1f1;
+      padding: 15px 25px;
+
+      img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+// Images
+%resposiveImg {
+  width: 600px;
+  height: 600px;
+  display: inline-block;
+
+  @include lg {
+    width: 500px;
+    height: 500px;
+  }
+
+  @include md {
+    width: 380px;
+    height: 380px;
+  }
+
+  @include sm {
+    margin: 0 auto;
+    width: 350px;
+    height: 350px;
+  }
+
+  @include xs {
+    margin: 0 auto;
+    width: 350px;
+    height: 300px;
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+// Links
+%a {
+  text-decoration: none;
+  color: #002147;
+}
+
+// Tags
+%tag {
+  background: #e1e1e1;
+  color: #000;
+  padding: 4px 9px;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba($color: #000, $alpha: 0.15);
+  margin: 0 5px;
+}
+
+// Lists
+%HzList {
+  list-style: none;
+
+  li {
+    padding: 7px 15px;
+    display: inline-block;
+
+    i {
+      margin: 0 5px;
+      position: relative;
+      top: 1px;
+      font-size: inherit;
+    }
+  }
+}
+
+%VlList {
+  list-style: none;
+
+  li {
+    padding: 10px 15px;
+
+    i {
+      margin: 0 5px;
+      position: relative;
+      top: 1px;
+      font-size: inherit;
+    }
+  }
+}
+
+// Social Icons
+%social-icons {
+  i {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    background: #002147;
+    border: 1px solid #002147;
+    margin: 0 4px;
+    cursor: pointer;
+
+    &:hover {
+      background: #fff;
+      color: #002147;
+    }
+  }
+}
+
+/*****************************************\ Selection Reset \**************************************/
+
+::selection {
+  background: $mainColor;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: $mainColor;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background: rgba($mainColor, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  width: 5px;
+  background-color: var(--mainColor);
+  border-radius: 5px;
+}

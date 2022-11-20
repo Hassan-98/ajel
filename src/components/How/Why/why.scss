@@ -1,0 +1,56 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+.why {
+  padding: 70px 0 100px;
+
+  @include lg {
+    padding: 70px 0;
+  }
+
+  .details {
+    h2 {
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    p {
+      margin-bottom: 25px;
+    }
+
+    .list {
+      ul {
+        li {
+          margin: 15px 0;
+          font-size: 18px;
+          color: #7a7b7c;
+
+          @include sm {
+            font-size: 15px;
+          }
+
+          i {
+            font-size: 22px;
+
+            @include sm {
+              font-size: 18px;
+            }
+
+            margin-inline-end: 10px;
+            color: var(--mainColor);
+          }
+        }
+      }
+    }
+
+    button {
+      margin-top: 25px;
+      border-radius: 8px;
+      background-color: var(--mainColor);
+      color: #fff;
+      border: 0;
+      padding: 10px 40px;
+    }
+  }
+
+}

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1933" height="494" viewBox="0 0 1933 494">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.17" y1="0.5" x2="2.612" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#053bc2"/>
+      <stop offset="1" stop-color="#37def5"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.83" x2="-1.612" xlink:href="#linear-gradient"/>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_13975" data-name="Rectangle 13975" width="407" height="346" transform="translate(941 3648)" fill="none" stroke="#fff" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_11759" data-name="Group 11759" transform="translate(0 -4845)">
+    <rect id="Rectangle_13974" data-name="Rectangle 13974" width="1920" height="494" transform="translate(0 4845)" fill="#053bc2"/>
+    <path id="Rectangle_13977" data-name="Rectangle 13977" d="M0,0H520a0,0,0,0,1,0,0V494a0,0,0,0,1,0,0H494A494,494,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(1400 4845)" fill="url(#linear-gradient)"/>
+    <path id="Rectangle_13978" data-name="Rectangle 13978" d="M0,0H26A494,494,0,0,1,520,494v0a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(0 4845)" fill="url(#linear-gradient-2)"/>
+    <g id="Group_5" data-name="Group 5" transform="translate(-529.956 4642.561)">
+      <path id="Path_10" data-name="Path 10" d="M1021.091,613.16H970.986c-5.716,0-10.366-6.3-10.366-14.047V589.5Z" transform="translate(-126.757 0)" fill="none" stroke="#fff" stroke-width="1"/>
+      <path id="Path_11" data-name="Path 11" d="M894.343,693.536H824.786c-15.584,0-28.217,17.114-28.217,38.225h0Z" transform="translate(0 -80.384)" fill="none" stroke="#fff" stroke-width="1"/>
+    </g>
+    <g id="Mask_Group_1" data-name="Mask Group 1" transform="translate(-941 1197)" clip-path="url(#clip-path)">
+      <g id="Ellipse_8" data-name="Ellipse 8" transform="translate(733 3543)" fill="none" stroke="#fff" stroke-width="1">
+        <circle cx="225.5" cy="225.5" r="225.5" stroke="none"/>
+        <circle cx="225.5" cy="225.5" r="225" fill="none"/>
+      </g>
+    </g>
+    <g id="Group_10496" data-name="Group 10496" transform="translate(1490.352 4895.021)">
+      <path id="Path_10-2" data-name="Path 10" d="M960.62,589.5h44.327c5.057,0,9.171,5.571,9.171,12.427v8.5Z" transform="translate(-960.612 -555.692)" fill="none" stroke="#fff" stroke-width="1"/>
+      <path id="Path_11-2" data-name="Path 11" d="M796.569,727.353H858.1c13.787,0,24.963-15.14,24.963-33.817h0Z" transform="translate(-796.569 -693.536)" fill="none" stroke="#fff" stroke-width="1"/>
+    </g>
+    <g id="Rectangle_13976" data-name="Rectangle 13976" transform="translate(1639 5156)" fill="none" stroke="#fff" stroke-width="1">
+      <path d="M43.5,0H294a0,0,0,0,1,0,0V87a0,0,0,0,1,0,0H43.5A43.5,43.5,0,0,1,0,43.5v0A43.5,43.5,0,0,1,43.5,0Z" stroke="none"/>
+      <path d="M43.5.5H293.006a.494.494,0,0,1,.494.494V86.006a.494.494,0,0,1-.494.494H43.5a43,43,0,0,1-43-43v0a43,43,0,0,1,43-43Z" fill="none"/>
+    </g>
+  </g>
+</svg>

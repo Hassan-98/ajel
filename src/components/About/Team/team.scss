@@ -1,0 +1,137 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+.Team {
+  padding: 120px 0;
+
+  @include lg {
+    padding: 100px 0;
+  }
+
+
+  h3 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+
+    @include lg {
+      font-size: 30px;
+    }
+
+    @include md {
+      font-size: 26px;
+    }
+
+    &::after {
+      content: "";
+      width: 135px;
+      height: 5px;
+      background-color: var(--secondaryColor);
+      display: block;
+      border-radius: 8px;
+      margin: 10px auto 15px;
+
+      @include sm {
+        width: 100px;
+        height: 3px;
+      }
+    }
+  }
+
+  p.description {
+    color: var(--paragraphsDark);
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 150px;
+
+    @include md {
+      width: 100%;
+      font-size: 15px;
+      margin-bottom: 70px;
+    }
+  }
+
+  .member {
+    border: 1px solid #ddd;
+    padding: 25px;
+    padding-top: 0;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s;
+
+    .image {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      width: 120px;
+      height: 120px;
+      padding: 10px;
+      border-radius: 50%;
+      margin: -60px auto 15px;
+      transition: all 0.2s ease-in-out;
+      transform: rotate(-45deg);
+
+      img {
+        transform: rotate(45deg);
+      }
+    }
+
+    h4 {
+      font-weight: bold;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+
+    p:first-of-type {
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .words {
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 25px;
+
+      i {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          background-color: var(--mainColor);
+          color: #fff;
+        }
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+      border-color: var(--mainColor);
+
+      .image {
+        border-color: var(--mainColor);
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        padding: 5px;
+      }
+
+      i {
+        color: var(--mainColor);
+      }
+    }
+  }
+}

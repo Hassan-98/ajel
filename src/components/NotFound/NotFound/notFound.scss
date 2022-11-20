@@ -1,0 +1,36 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+.not-found {
+  padding: 70px 0 120px;
+  text-align: center;
+
+  @include lg {
+    padding: 70px 0 90px;
+  }
+
+  img {
+    width: 148px;
+    height: 148px;
+    margin: auto;
+  }
+
+  h1 {
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    margin-bottom: 25px;
+  }
+
+  button {
+    border-radius: 8px;
+    background-color: var(--mainColor);
+    color: #fff;
+    border: 0;
+    padding: 10px 40px;
+  }
+
+}

@@ -1,0 +1,115 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+.about {
+  padding: 140px 0 100px;
+
+  @include lg {
+    padding: 50px 0;
+  }
+
+  @include md {
+    padding: 20px 0;
+  }
+
+  .info {
+    h4 {
+      font-size: 30px;
+      font-weight: bold;
+
+      @include lg {
+        font-size: 26px;
+      }
+
+      @include md {
+        font-size: 23px;
+      }
+
+      &::after {
+        content: "";
+        width: 135px;
+        height: 5px;
+        background-color: var(--secondaryColor);
+        display: block;
+        border-radius: 8px;
+        margin: 10px 0 15px;
+
+        @include sm {
+          width: 100px;
+          height: 3px;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 32px;
+      font-weight: bold;
+      color: var(--mainColor);
+      margin-bottom: 25px;
+
+      @include lg {
+        font-size: 30px;
+      }
+
+      @include md {
+        font-size: 28px;
+      }
+    }
+
+    p {
+      color: var(--paragraphsDark);
+      margin-bottom: 32px;
+      width: 85%;
+
+      @include md {
+        width: 100%;
+        font-size: 15px;
+      }
+    }
+
+    .services {
+      margin-top: 50px;
+
+      @include lg {
+        margin-top: 20px;
+      }
+
+      .service {
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 0 25px rgba($color: #000, $alpha: 0.1);
+        border-radius: 8px;
+
+        img {
+          width: 90px;
+          height: 90px;
+          margin: 10px auto 25px;
+
+          @include lg {
+            width: 65px;
+            height: 65px;
+          }
+        }
+
+        p {
+          width: 100%;
+          margin-bottom: 10px;
+
+          @include lg {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .image {
+    img {
+      @include lg {
+        width: auto;
+        height: 50vh;
+        margin: 15px auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+.Join-Us {
+  background-image: url('/assets/images/callToAction.svg');
+  background-size: cover;
+  padding: 100px 0;
+
+  @include lg {
+    padding: 70px 0;
+  }
+
+  .info {
+    h3 {
+      font-size: 42px;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+
+      @include lg {
+        font-size: 36px;
+      }
+
+      @include md {
+        font-size: 30px;
+      }
+    }
+
+    p {
+      color: #eee;
+      width: 50%;
+      text-align: center;
+      margin: auto;
+      margin-top: 25px;
+      margin-bottom: 50px;
+      font-size: 15px;
+
+      @include md {
+        width: 100%;
+        font-size: 14px;
+      }
+    }
+
+    .actions {
+      text-align: center;
+
+      button:first-child {
+        @extend %main-button;
+        background-color: #fff;
+        color: var(--mainColor);
+        display: inline;
+        width: 180px;
+        height: 45px;
+        margin-inline-end: 15px;
+        padding: 0;
+
+        &:hover {
+          background-color: #fff;
+          color: var(--mainColor);
+        }
+
+        @include md {
+          width: 170px;
+          height: 40px;
+          font-size: 15px;
+          margin-inline-end: 8px;
+        }
+
+        @include xs {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 15px;
+        }
+      }
+
+      button:last-child {
+        @extend %secondary-button;
+        background-color: transparent;
+        display: inline;
+        width: 180px;
+        height: 45px;
+        border-color: #fff;
+        color: #fff;
+        padding: 0;
+
+        &:hover {
+          background-color: #fff;
+          color: var(--mainColor);
+        }
+
+        @include md {
+          width: 170px;
+          height: 40px;
+          font-size: 15px;
+        }
+
+        @include xs {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+}

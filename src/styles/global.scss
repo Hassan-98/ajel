@@ -1,0 +1,20 @@
+html,
+body {
+  font-family: var(--font);
+}
+
+body {
+  direction: rtl;
+}
+
+body.en {
+  --font: Rubik;
+  --alt-font: Rubik;
+  direction: ltr;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

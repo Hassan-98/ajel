@@ -1,0 +1,126 @@
+/****************| Media Query Mixins |****************/
+@mixin xxl {
+  @media (max-width: 1680px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (max-width: 1480px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin xxs {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+
+@mixin sw {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+/****************| Centering Mixin |****************/
+@mixin center($type: flex) {
+  @if ($type == flex) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } @else if ($type == position) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else {
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
+  text-align: center;
+}
+
+/****************| Add Font Mixin |****************/
+@mixin addFont($name, $path) {
+  @font-face {
+    font-family: $name;
+    src: url($path);
+  }
+}
+
+/****************| Fixed Background Mixin |****************/
+@mixin fixedBack($imgPath) {
+  background: url($img) fixed no-repeat;
+  background-size: cover;
+}
+
+/****************| Overlay Mixin |****************/
+@mixin overlay($color, $opacity) {
+  width: 100%;
+  height: 100%;
+  background: rgba($color, $opacity);
+}
+
+/****************| Float Clearfix Mixin |****************/
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/****************| Animation Keyframe Mixin |****************/
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+/****************| Reverse Bg Color Function |****************/
+@function setTxtColor($bgColor, $light: #fff, $dark: #333) {
+  @if (lightness($bgColor) > 70) {
+    @return $dark;
+  } @else {
+    @return $light;
+  }
+}
+
+@mixin setBgColor($bgColor, $txtLight: #fff, $txtDark: #333) {
+  background: $bgColor;
+  color: setTxtColor($bgColor, $txtLight, $txtDark);
+}

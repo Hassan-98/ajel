@@ -1,0 +1,85 @@
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
+
+.Partners {
+  padding: 80px 0 150px;
+
+  @include lg {
+    padding: 50px 0 100px;
+  }
+
+
+  h3 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+
+    @include lg {
+      font-size: 30px;
+    }
+
+    @include md {
+      font-size: 26px;
+    }
+
+    &::after {
+      content: "";
+      width: 135px;
+      height: 5px;
+      background-color: var(--secondaryColor);
+      display: block;
+      border-radius: 8px;
+      margin: 10px auto 15px;
+
+      @include sm {
+        width: 100px;
+        height: 3px;
+      }
+    }
+  }
+
+  .info {
+    &>p {
+      color: var(--paragraphsDark);
+      width: 50%;
+      text-align: center;
+      margin: auto;
+      margin-bottom: 60px;
+
+      @include md {
+        width: 100%;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .clients {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    .client {
+      flex-grow: 1;
+      flex-basis: calc(20% - 20px);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+      border-radius: 25px;
+      overflow: hidden;
+      max-height: 250px;
+      max-width: 375px;
+
+      @include lg {
+        flex-basis: calc(33.33% - 20px);
+        max-height: 150px;
+        max-width: 232px;
+      }
+
+      @include sm {
+        flex-basis: calc(50% - 20px);
+        max-height: 120px;
+        max-width: 186px;
+        border-radius: 15px;
+      }
+    }
+  }
+}
