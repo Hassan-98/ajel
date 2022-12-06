@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 //= Hooks
 import { useTranslation } from "react-i18next";
 //= Packages
@@ -11,10 +11,29 @@ type Props = {
 }
 
 const Stats: React.FC<Props> = ({ mt }) => {
+  const [load, setLoad] = useState<boolean>(false);
   const { t: translate } = useTranslation();
+  const section = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  function handleScroll() {
+    let element = section.current!;
+    let sectionTop = element.getBoundingClientRect().top;
+    let sectionBottom = element.getBoundingClientRect().bottom;
+
+    if (sectionTop < 800 && sectionBottom > 200) {
+      setLoad(true);
+    } else {
+      setLoad(false);
+    }
+  }
 
   return (
-    <section className={`Stats ${mt ? 'mt-5' : ''}`}>
+    <section className={`Stats ${mt ? 'mt-5' : ''}`} ref={section}>
       <div className="container">
         <div className="row">
           <div className={`col-12 mb-5 ${mt ? 'mt-5' : ''}`}>
@@ -27,11 +46,14 @@ const Stats: React.FC<Props> = ({ mt }) => {
                     <div className="stat">
                       <div className="details">
                         <h5>
-                          <CountUp
-                            start={0}
-                            end={50}
-                            duration={3}
-                          />
+                          {
+                            load &&
+                            <CountUp
+                              start={0}
+                              end={50}
+                              duration={3}
+                            />
+                          }
                           K
                         </h5>
                         <p>{translate('Home/Stats/stat1')}</p>
@@ -45,11 +67,14 @@ const Stats: React.FC<Props> = ({ mt }) => {
                     <div className="stat">
                       <div className="details">
                         <h5>
-                          <CountUp
-                            start={0}
-                            end={14}
-                            duration={3}
-                          />
+                          {
+                            load &&
+                            <CountUp
+                              start={0}
+                              end={14}
+                              duration={3}
+                            />
+                          }
                           K
                         </h5>
                         <p>{translate('Home/Stats/stat2')}</p>
@@ -63,11 +88,14 @@ const Stats: React.FC<Props> = ({ mt }) => {
                     <div className="stat">
                       <div className="details">
                         <h5>
-                          <CountUp
-                            start={0}
-                            end={100}
-                            duration={3}
-                          />
+                          {
+                            load &&
+                            <CountUp
+                              start={0}
+                              end={100}
+                              duration={3}
+                            />
+                          }
                           K
                         </h5>
                         <p>{translate('Home/Stats/stat3')}</p>
@@ -81,11 +109,14 @@ const Stats: React.FC<Props> = ({ mt }) => {
                     <div className="stat">
                       <div className="details">
                         <h5>
-                          <CountUp
-                            start={0}
-                            end={600}
-                            duration={3}
-                          />
+                          {
+                            load &&
+                            <CountUp
+                              start={0}
+                              end={600}
+                              duration={3}
+                            />
+                          }
                           K
                         </h5>
                         <p>{translate('Home/Stats/stat4')}</p>
